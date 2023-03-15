@@ -10,6 +10,7 @@ CV_BUILDER_CLIENT_COMPOSE_FILE=services/cv-builder/client/docker-compose.yml
 .PHONY: infra
 .PHONY: cv-builder
 .PHONY: networks
+.PHONY: dev
 
 all:
 	docker network create microservice-network
