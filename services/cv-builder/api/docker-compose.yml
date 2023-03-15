@@ -1,0 +1,31 @@
+version: '3.8'
+
+networks:
+  microservice-network:
+    external:
+      name: microservice-network
+  cv-builder-network:
+    external:
+      name: cv-builder-network
+
+services:
+
+  cv-builder-api:
+    build:
+      context: .
+      dockerfile: ${DOCKERFILE}
+    container_name: cv-builder-api
+    volumes:
+      - ./src:/opt/app/api/src
+      - /opt/app/api/node_modules
+    tty: true
+    stdin_open: true
+    environment:
+      CLIENT_PORT: ${CV_BUILDER_INTERNAL_APi_PORT}
+      CHOKIDAR_USEPOLLING: true
+      LOCAL_HOST: '0.0.0.0' # Docker local host
+    ports:
+      - ${CV_BUILDER_API_EXTERNAL_PORT}:${CV_BUILDER_INTERNAL_APi_PORT}
+    networks:
+      - microservice-network
+      - cv-builder-network
