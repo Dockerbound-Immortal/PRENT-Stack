@@ -4,9 +4,6 @@ networks:
   microservice-network:
     external:
       name: microservice-network
-  cv-builder-network:
-    external:
-      name: cv-builder-network
 
 volumes:
   app-data:
@@ -21,35 +18,5 @@ services:
       - 8080:80
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-    networks:
-      - microservice-network
-
-  app-db:
-    image: postgres:15.2
-    restart: unless-stopped
-    tty: true
-    container_name: app-db
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
-      SERVICE_TAGS: dev
-      SERVICE_NAME: app-db
-    volumes:
-      - app-data:/var/lib/postgresql/data
-      - ./db/init:/docker-entrypoint-initdb.d/
-    networks:
-      - microservice-network
-
-  adminer:
-    image: adminer:latest
-    container_name: adminer
-    ports:
-      - 8081:8080
-    restart: always
-    depends_on:
-      - app-db
     networks:
       - microservice-network
