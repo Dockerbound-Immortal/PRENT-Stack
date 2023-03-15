@@ -5,11 +5,9 @@ backend and frontend `TypeScript` configured.
 
 # Usage
 
-To use this project for development you can run the makefile. You will need to ensure
-the networks build prior to the containers for the Nginx gateway to function correctly.
-
-To develop on your local machine you will need to run `yarn install` in both the client and api.
-These applications will still work without this as `node_modules` is mounted within the container.
+- To run this project for `development` with the `gateway` run: `make all`
+- To run this project for `development` without the `gateway` run: `make dev`
+- To run this project for `production` run: `make all` but remove the EXPOSED ports in the service containers
 
 # Ports
 
