@@ -9,24 +9,30 @@ backend and frontend `TypeScript` configured.
 
 This template is completely modular. By default you will be able to spin up a Fullstack
 application with an `Nginx` gateway, but that doesn't mean you have to stick with that.
-You can spin up the client or API on their own perfectly reasonably using `docker-compose`.
+You can spin up the client or API on their own perfectly reasonably using `docker-compose`
+or their respective `Makefiles`. Using the `Makefiles` you don't even need to change the
+structure of the project for a simple `client\api` service, just want a Client? you can
+simply use the Client directory on it's own, want an API with a database but no client?
+delete the client directory! want to add your own database? remove the DB step!
+don't want the API gateway? simply remove the infrastructure! customise it to suite your
+needs.
 
 ## Ease of Use
 
-You can pull this template, run make, and have a dev environment ready to play with. 
+You can pull this template, run make, and have a dev environment ready to play with.
 
 ## Testing Ready
 
 All the pain of setting up RTL with Vitest is done. In future versions we will
 also have tests for the `API` ready to go. There are also some eslint rules
-tailored to preferences used at a professional organisation. 
+tailored to preferences used at a professional organisation.
 
 ## Fun!
 
 You can learn to set up more advanced `docker-compose` files by simply studying
 the layout of this project. In the future we may decide to orchestrate these
 containers with `Kubernetes` or `Docker Swarm`. We would also like to get some
-automated CIs running. 
+automated CIs running.
 
 # Usage
 
