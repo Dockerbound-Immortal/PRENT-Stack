@@ -6,7 +6,7 @@ DATABASE_COMPOSE_FILE=infrastructure/db/docker-compose.yml
 CV_BUILDER_API_COMPOSE_FILE=services/cv-builder/api/docker-compose.yml
 CV_BUILDER_CLIENT_COMPOSE_FILE=services/cv-builder/client/docker-compose.yml
 
-.PHONY: all infra cv-builder networks dev stop
+.PHONY: all infra cv-builder networks dev stop client api
 
 all: networks cv-builder infra
 
