@@ -3,6 +3,31 @@
 This template contains a complete stack utilising a `Node` API and `React` frontend with both
 backend and frontend `TypeScript` configured.
 
+# Why Use This Template?
+
+## Modularity
+
+This template is completely modular. By default you will be able to spin up a Fullstack
+application with an `Nginx` gateway, but that doesn't mean you have to stick with that.
+You can spin up the client or API on their own perfectly reasonably using `docker-compose`.
+
+## Ease of Use
+
+You can pull this template, run make, and have a dev environment ready to play with. 
+
+## Testing Ready
+
+All the pain of setting up RTL with Vitest is done. In future versions we will
+also have tests for the `API` ready to go. There are also some eslint rules
+tailored to preferences used at a professional organisation. 
+
+## Fun!
+
+You can learn to set up more advanced `docker-compose` files by simply studying
+the layout of this project. In the future we may decide to orchestrate these
+containers with `Kubernetes` or `Docker Swarm`. We would also like to get some
+automated CIs running. 
+
 # Usage
 
 - To run this project for `development` with the `gateway` run: `make all`
